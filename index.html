@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock-Paper-Scissors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;0,900;1,500&display=swap');
+        body {
+            background-color: #f7fafc;
+            font-family: Montserrat;
+        }
+    </style>
+</head>
+
+
+<body class="flex flex-col items-center justify-center h-screen mx-10 text-center">
+<h1 class="text-4xl font-black mb-8 text-gray-800">ROCK PAPER & SCISSORS</h1>
+
+<div class="flex flex-wrap mx-10 items-center gap-4 justify-center  ">
+    <button onclick="batAsAChoice()" class="bg-red-500 w-36 hover:bg-red-600 text-white font-semibold shadow-lg py-2 px-4  rounded-lg transition duration-300 ease-in-out">Rock 🪨</button>
+    <button onclick="ballAsAChoice()" class="bg-yellow-500 w-36 hover:bg-yellow-600 text-white shadow-lg  font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out">Paper 🧻</button>
+    <button onclick="scissorAsAChoice()" class="bg-blue-500 w-36 hover:bg-blue-600 text-white shadow-lg   font-semibold py-2 px-4  rounded-lg transition duration-300 ease-inout">Scissors ✂️</button>
+</div>
+
+<div class=" textresult mt-8">
+    <p class="abhaychoice text-xl font-sans font-light text-gray-700"> --------- </p>
+
+
+    <p class=" result text-2xl font-bold mt-4" id="result"> Let's Gooo...</p>
+</div>
+
+<button onclick="  document.querySelector('.abhaychoice').innerText = 'Try your Luck';
+    document.querySelector('.result').innerText='Let\'s Goo'" class="mt-8 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 shadow-lg rounded-lg transition duration-300 ease-in-out">Try Again </button>
+
+
+<script>
+function batAsAChoice(){
+    computerChoice = null;
+    console.log('You\'ve chosen rock.');
+    let randomNumber = Math.random()*3;
+    if (randomNumber > 0 && randomNumber <= 1){
+        computerChoice = 'rock';
+        console.log('rock')
+    }   else if (randomNumber > 1 && randomNumber <=2){
+        computerChoice = 'paper';
+        console.log('paper')
+    }   else {
+        computerChoice = 'scissor';
+        console.log('scissor')}
+
+    if (computerChoice === 'rock'){
+        document.querySelector('.abhaychoice').innerText='abhay chose rock!!'
+        document.querySelector('.result').innerText='It\'s a Tie 🤧'
+
+    } else if( computerChoice === 'paper'){
+        document.querySelector('.abhaychoice').innerText='abhay chose paper!!'
+        document.querySelector('.result').innerText='We Lost 😡'
+    } else{ document.querySelector('.abhaychoice').innerText='abhay chose scissor!!'
+        document.querySelector('.result').innerText='We Won 🎉'
+    }
+
+}
+
+function ballAsAChoice(){
+    computerChoice = null;
+    console.log('You\'ve chosen paper.');
+    let randomNumber = Math.random()*3;
+    if (randomNumber > 0 && randomNumber <= 1){
+        computerChoice = 'rock';
+        console.log('rock')
+    }   else if (randomNumber > 1 && randomNumber <=2){
+        computerChoice = 'paper';
+        console.log('paper')
+    }   else {
+        computerChoice = 'scissor';
+        console.log('scissor')}
+
+
+    if (computerChoice === 'rock'){
+        document.querySelector('.abhaychoice').innerText='abhay chose rock!!'
+        document.querySelector('.result').innerText='We Won 🎉'
+
+    } else if( computerChoice === 'paper'){
+        document.querySelector('.abhaychoice').innerText='abhay chose paper!!'
+        document.querySelector('.result').innerText='It\'s a Tie 🤧'
+    } else{ document.querySelector('.abhaychoice').innerText='abhay chose scissor!!'
+        document.querySelector('.result').innerText='We Lost 😡'
+    }
+
+}
+
+function scissorAsAChoice(){
+    computerChoice = null;
+    console.log('You\'ve chosen scissor.');
+    let randomNumber = Math.random()*3;
+    if (randomNumber > 0 && randomNumber <= 1){
+        computerChoice = 'rock';
+        console.log('rock')
+    }   else if (randomNumber > 1 && randomNumber <=2){
+        computerChoice = 'paper';
+        console.log('paper')
+    }   else {
+        computerChoice = 'scissor';
+        console.log('scissor')}
+
+    if (computerChoice === 'rock'){
+        document.querySelector('.abhaychoice').innerText='abhay chose rock!!'
+        document.querySelector('.result').innerText='We Lost 😡 '
+
+    } else if( computerChoice === 'paper'){
+        document.querySelector('.abhaychoice').innerText='abhay chose paper!!'
+        document.querySelector('.result').innerText='We Won 🎉'
+    } else{ document.querySelector('.abhaychoice').innerText='abhay chose scissor!!'
+        document.querySelector('.result').innerText='It\'s a Tie 🤧'
+    }
+}
+
+// function clear(){
+//     document.querySelector('.abhaychoice').innerText = 'haha, sure...'
+//     document.querySelector('.result').innerText='Let\'s Goo'}
+
+
+</script>
+</body>
+</html>
